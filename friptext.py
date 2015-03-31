@@ -15,8 +15,13 @@ class MainWindows(QWidget):
         self.frip_options = QPushButton('关于', self)
         self.frip_horizion = QPushButton('竖转', self)
         self.frip_backup = QPushButton('复原', self)
-        # 备份值
-        self.before = ''
+        self.frip_button.setStyleSheet('font-size: 10pt;')
+        self.frip_horizion.setStyleSheet('font-size: 10pt;')
+        self.frip_backup.setStyleSheet('font-size: 10pt;')
+        self.frip_options.setStyleSheet('font-size: 10pt;')
+        self.frip_text.setStyleSheet('font-size: 11pt;')
+        # 备份
+        self.backup = ''
         # 布局
         frip_grid = QGridLayout()
         frip_grid.setSpacing(10)
@@ -72,7 +77,6 @@ class MainWindows(QWidget):
                     out += '  '
             out += '\n'
             after += out
-        print(after)
         self.frip_text.setText(after)
 
     def makebackup(self):
